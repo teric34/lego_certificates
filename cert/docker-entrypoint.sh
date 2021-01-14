@@ -13,7 +13,7 @@ echo 'hello'
 #lego --path /lego \
 #    --dns digitalocean \
 #    --email example@mail.com \
-#    --domains *.masa-nakajima.com \
-#    --domains masa-nakajima.com  \
+#    --domains *.domains.com \
+#    --domains domains.com  \
 #    --accept-tos \
 #    renew --days 3;
