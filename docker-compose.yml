@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  cert:
+    build: ./cert
+    container_name: certb
+    environment:
+      DO_AUTH_TOKEN: ${AUTH_TOKEN}
+      DNS: ${DNS}
+      DOMAINS1: ${DOMAINS1}
+      DOMAINS2: ${DOMAINS2}
+    volumes:
+      - ./cert:/lego
+  # web:
+  # image: nginx:1.18.0-alpine
+  # container_name: websrv2
+  #  restart: always
+  #  ports:
+  #    - 80:80
+  #  environment:
+  #    TZ: "Asia/Tokyo"
+  #  depends_on:
+  #    - cert
