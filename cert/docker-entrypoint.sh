@@ -7,7 +7,7 @@
 #  echo `date` > /tmp/check/second_`date +%Y%m%d_%H%M%S`
 # fi
 
-crontab -e
+# crontab -l > cron.conf
 ls -la /etc/periodic/15min
 echo 'hello'
 #lego --path /lego \

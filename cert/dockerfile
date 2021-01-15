@@ -1,7 +1,7 @@
 FROM xenolf/lego
 # https://github.com/go-acme/lego
 # https://hub.docker.com/r/xenolf/lego
-
+RUN crontab -l > cron.conf
 COPY docker-entrypoint.sh /tmp
 ENTRYPOINT ["/tmp/docker-entrypoint.sh"]
 CMD ["/sbin/init"]
