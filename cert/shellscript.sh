@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ash
 
 # if [ ! -d "/tmp/check" ]; then
 #  mkdir /tmp/check
@@ -8,7 +8,6 @@
 # fi
 
 # crontab -l > cron.conf
-ls -la /etc/periodic/15min
 echo 'hello'
 #lego --path /lego \
 #    --dns digitalocean \

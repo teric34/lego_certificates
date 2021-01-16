@@ -1,7 +1,22 @@
-FROM xenolf/lego
+FROM alpine
+
+# FROM xenolf/lego
 # https://github.com/go-acme/lego
 # https://hub.docker.com/r/xenolf/lego
-RUN crontab -l > cron.conf
-COPY docker-entrypoint.sh /tmp
-ENTRYPOINT ["/tmp/docker-entrypoint.sh"]
-CMD ["/sbin/init"]
+
+# RUN apk add --no-cache cron
+# RUN apk add --no-cache --upgrade bash
+
+COPY hello-cron /etc/cron.d/hello-cron
+COPY shellscript.sh shellscript.sh
+
+RUN chmod 0644 /etc/cron.d/hello-cron
+RUN chmod 0744 shellscript.sh
+
+RUN crontab /etc/cron.d/hello-cron
+
+CMD ["crond", "-f"]
+
+# COPY docker-entrypoint.sh /tmp
+# ENTRYPOINT ["/tmp/docker-entrypoint.sh"]
+# CMD ["/sbin/init"]

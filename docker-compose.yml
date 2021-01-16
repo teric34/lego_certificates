@@ -10,7 +10,7 @@ services:
       DOMAINS1: ${DOMAINS1}
       DOMAINS2: ${DOMAINS2}
     volumes:
-      - ./cert/cron.conf:/cron.conf
+    #  - ./cron.log:/var/log/cron.log
       - ./cert/certs:/lego
   # web:
   # image: nginx:1.18.0-alpine
